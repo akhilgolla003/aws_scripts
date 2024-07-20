@@ -29,8 +29,8 @@ eksctl create cluster --name javaexpress-new-cluster --version 1.29 --region ap-
 
 Delete LoadBalancer
 -------------------
-kubectl delete svc <service-name>
-Example : kubectl delete svc springboot-svc 
+kubectl delete svc <service-name> -n develop
+Example : kubectl delete svc springboot-svc -n develop
 
 Delete Kubernetes Cluster 
 -------------------------
