@@ -78,11 +78,12 @@ sudo cat -n /etc/sudoers (verification)
 
 ## Step-3 : Setup Docker in Jenkins ##
 ```
-curl -fsSL get.docker.com | /bin/bash
-sudo usermod -aG docker jenkins
-sudo usermod -aG docker ubuntu
-sudo systemctl restart jenkins
-sudo docker version
+sudo apt install docker.io -y
+sudo usermod -aG docker jenkins 
+sudo usermod -aG docker ubuntu 
+Restart EC2
+sudo su - jenkins 
+docker images
 ```
 
 # Step - 4 : Create Jenkins Job #
