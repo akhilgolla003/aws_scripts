@@ -22,11 +22,13 @@ java -version
 ```
 sudo wget -O /usr/share/keyrings/jenkins-keyring.asc \
   https://pkg.jenkins.io/debian-stable/jenkins.io-2023.key
-echo deb [signed-by=/usr/share/keyrings/jenkins-keyring.asc] \
+  
+echo "deb [signed-by=/usr/share/keyrings/jenkins-keyring.asc]" \
   https://pkg.jenkins.io/debian-stable binary/ | sudo tee \
   /etc/apt/sources.list.d/jenkins.list > /dev/null
+  
 sudo apt-get update
-sudo apt-get install jenkins
+sudo apt-get install jenkins -y
 ```
 4) Start Jenkins
 
@@ -55,6 +57,20 @@ sudo cat /var/lib/jenkins/secrets/initialAdminPassword
 ```
 	   
 8) Create Admin Account & Install Required Plugins in Jenkins
+
+9) Provide Adminsiotor privilges for Jenkins User
+
+sudo vi /etc/sudoers 
+jenkins ALL=(ALL) NOPASSWD: ALL 
+To Save the file 
+	Enter i in keyword 
+	Paste below command 
+		jenkins ALL=(ALL) NOPASSWD: ALL 
+	Esc
+	:wq! (enter)
+	
+sudo su - jenkins
+sudo cat -n /etc/sudoers (verification)
 
 ## Step-2 : Configure Maven as Global Tool in Jenkins ##
 
