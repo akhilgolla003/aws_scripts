@@ -7,8 +7,11 @@ unzip awscliv2.zip
 sudo ./aws/install
 aws --version
 
-Authenitcate AWS EC2 to Kubernetes 
+Authenitcate AWS EC2 to Kubernetes (Profile->Security Credentials(create Secret Key and Secret Text)->Create Access Key)
 aws configure
+>>Secretkey
+>>SecretText
+
 
 install kubectl using below commands
 ---------------------------------------
